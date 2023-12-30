@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <style>
+        body{
+    background-image: url("{{ url_for('static',filename='background.png')}}");
+}
+input{
+    width: 20%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0 15px;
+    font-size: 16px;
+    margin: 1% auto;
+    display: flex;
+    justify-items: center;
+}
+.submit_btn{
+    width:20%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0 15px;
+    font-size: 16px;
+    /* margin-bottom: 10px; */
+    display: flex;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    justify-content: center;
+}
+img{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+    </style>
+</head>
+<body>
+    <div>
+        <img src="{{ url_for('static',filename='logo.png')}}" alt="" height="400" width="400">
+        <h1 style="color: white; font-family: Comic Sans MS; text-align: center;">Welcome to CloudVault</h1>
+        <form action="/submitReq" method="POST">
+            <input type="number" name="size"  placeholder="Size (UpTo 20GB)">
+            <input type="text" placeholder="Directory Name" name = "dirname">
+            <input class="submit_btn" type="submit" value="Get Storage">
+        </form>
+    </div>
+</body>
+</html>

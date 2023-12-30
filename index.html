@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        input{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: flex;
+}
+body{
+    background-image: url("{{ url_for('static',filename='background.png')}}");
+}
+
+.main{
+    /* center this div  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.submit_btn{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0 15px;
+    font-size: 16px;
+    /* margin-bottom: 10px; */
+    display: flex;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    justify-content: center;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+}
+    </style>
+</head>
+<body>
+    <div style="display: grid; grid-template-columns: 1fr 1fr;">
+        <div class="logo">
+            <img src="{{ url_for('static',filename='logo.png')}}" alt="" height="700" width="700">
+        </div>
+        <div class="main">
+            <form  method="POST" action="/success">
+                <input name="username" type="text" placeholder="username">
+                <input type="text" name="ip" placeholder="IP Address">
+                <input name="password" type="password" placeholder="password">
+                <input class="submit_btn" type="submit" value="Lets GO !!">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
